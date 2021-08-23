@@ -1,0 +1,36 @@
+---
+title: "Example Assigment"
+author: "Salvador Sánchez"
+date: "8/23/2021"
+output: pdf_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+
+library(tidyverse)
+```
+
+## The Data
+
+The "cars" dataset references the speed and stopping distances of cars in the 1920s
+
+*Source: "{datasets}"*
+
+```{r scatterplot}
+
+data(cars)
+
+
+# make scatterplot of speed and dist
+
+cars %>%
+  ggplot() +
+  geom_point(aes(x = dist, y = speed)) +
+  theme_minimal() +
+  labs(title = "Speed vs Stopping Distance",
+      x = "Stopping Distance (ft)",
+      y = "Speed (MPH)")
+```
+
+
